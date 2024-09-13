@@ -1,0 +1,36 @@
+body {
+    background-color: #ff2800; 
+    font-family: 'Arial', sans-serif; 
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
+    color: #b3e6ff; 
+}
+
+p {
+    font-size: 1.5em;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    color: #b3e6ff; 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
