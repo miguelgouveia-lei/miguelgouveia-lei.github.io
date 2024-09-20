@@ -1,0 +1,107 @@
+/* Estilo do corpo e fundo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('images/roma.jpeg') no-repeat center center fixed;
+    background-size: cover; /* Faz a imagem cobrir toda a área do body */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* Header */
+h1 {
+    margin: 0;
+    font-size: 15em; /* Reduzi o tamanho do título */
+    color: #f1f1f1;
+    text-align: center;
+}
+
+h2 {
+    font-weight: 100;
+    position: relative;
+    margin: 0;
+    font-size: 2.57em;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
+    text-align: center; /* Centraliza o subtítulo */
+}
+
+nav {
+    margin-top: 10px;
+    position: relative;
+    text-align: center; /* Centraliza o menu de navegação */
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-right: 15px;
+    font-weight: 100;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main */
+main {
+    flex: 1; /* Permite que o conteúdo principal expanda */
+    padding: 20px;
+    margin-top: 50px; /* Reduzi o espaçamento superior */
+    text-align: center;
+}
+
+/* Centraliza o texto dentro do div com a classe centralizar-texto */
+.centralizar-texto {
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px;  /* Adiciona algum espaçamento interno */
+    max-width: 600px; /* Define uma largura máxima para o bloco */
+    border: 1px solid #ccc; /* Adiciona uma borda para visualizar o bloco */
+    background: rgba(255, 255, 255, 0.8); /* Adiciona um fundo branco semi-transparente */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+
+/* Centraliza o texto dos h3 e adiciona espaçamento */
+h3 {
+    text-align: center;
+    font-size: 2em ;
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
+
+}
+
+/* Estilo opcional para o iframe, para centralizar e adicionar espaçamento */
+iframe {
+    display: block;
+    margin: 20px auto;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    position: relative; /* Ajustado para ficar no final da página */
+    bottom: 0;
+}
+
+footer p {
+    color: #ffffffba;
+}
+
+/* Imagens no centro */
+p {
+    text-align: center;
+}
+
+a img {
+    margin-right: 10px;
+}

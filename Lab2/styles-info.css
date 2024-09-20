@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('images/roma.jpeg') no-repeat center center fixed;
+    background-size: cover; /* Faz a imagem cobrir toda a área do body */
+}
+
+h1 {
+    margin: 0;
+    font-size: 15em;
+    color: #f1f1f1;
+}
+
+h2 {
+    font-weight: 100;
+    position: relative;
+    margin: 0;
+    font-size: 2.57em;
+    color: #000000;
+
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 15px rgba(0, 0, 0, 0.6); /* Efeito de sombra para destacar o texto */
+}
+
+
+nav {
+    margin-top: ppx;
+    position: absolute;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Cor dos links */
+    margin-right: 15px;
+    margin-top: 20px;
+    font-weight: 100; /* Torna o texto muito fino */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6); /* Efeito de sombra para destacar o texto */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer p{
+
+    color: #ffffffba;
+    
+}
+
+main {
+    margin-top: 120px; /* Espaço para o cabeçalho fixo */
+    padding: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0; /* Fica fixo no fundo da página */
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #00000051;
+}

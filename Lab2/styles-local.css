@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('images/roma.jpeg') no-repeat center center fixed;
+    background-size: cover; /* Faz a imagem cobrir toda a área do body */
+    padding-bottom: 80px; /* Adiciona espaço suficiente para o footer */
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 4em; /* Ajuste o tamanho conforme necessário */
+    color: #f1f1f1;
+    width: 100%; /* Ocupa toda a largura da página */
+    text-align: center; /* Centraliza o texto */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 15px rgba(0, 0, 0, 0.6); /* Efeito de sombra para destacar o texto */    
+}
+
+h2 {
+    font-weight: 100; /* Ajuste conforme necessário */
+    position: relative;
+    text-align: center; /* Adicionado ponto e vírgula */
+    margin: 0;
+    font-size: 1.47em;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 15px rgba(0, 0, 0, 0.6); /* Efeito de sombra para destacar o texto */
+}
+
+nav {
+    margin-top: 10px; /* Espaço acima do nav */
+    position: absolute;
+    width: 100%; /* Faz o nav ocupar toda a largura da página */
+    text-align: center; /* Centraliza o texto dentro do nav */
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Cor dos links */
+    margin: 0 15px; /* Adiciona margem horizontal entre os links */
+    font-weight: 300; /* Ajustado para um valor mais visível */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6); /* Efeito de sombra para destacar o texto */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    color: #ffffffba;
+}
+
+main {
+    margin-top: 50px; /* Reduza o espaço acima do main */
+    padding: 20px;
+}
+
+footer {
+    position: relative;
+    bottom: 0; /* Fica fixo no fundo da página */
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #00000051;
+    margin-top: 20px; /* Adiciona margem acima do footer */
+}
+
+.map-container {
+    margin: 20px auto;
+    max-width: 100%;
+    text-align: center; /* Centraliza o mapa dentro do container */
+}
+
+iframe {
+    border: none; /* Remove a borda padrão do iframe */
+    width: 100%; /* Faz o iframe ocupar toda a largura disponível */
+    height: 600px; /* Define uma altura maior para o iframe */
+}
+
