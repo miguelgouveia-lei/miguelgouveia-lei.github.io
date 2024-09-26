@@ -83,11 +83,39 @@ h3 {
 
 }
 
-/* Estilo opcional para o iframe, para centralizar e adicionar espaçamento */
+/* Estilos para garantir que o iframe e as imagens pequenas estejam lado a lado */
+.galeria {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Espaço entre o iframe e as imagens */
+}
+
 iframe {
     display: block;
     margin: 20px auto;
+    width: 800px;
+    height: 600px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
 }
+
+/* Imagem pequena */
+.imagens-pequenas a {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Ajuste de estilo para que as imagens grandes preencham completamente o iframe */
+iframe img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem ocupe todo o iframe */
+}
+
+
 
 /* Footer */
 footer {

@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('images/roma.jpeg') no-repeat center center fixed;
+    background-size: cover; /* Faz a imagem cobrir toda a área do body */
+}
+
+h1 {
+    margin: 0;
+    font-size: 15em;
+    color: #f1f1f1;
+}
+
+h2 {
+    font-weight: 100;
+    position: relative;
+    margin: 0;
+    font-size: 2.57em;
+    color: #000000;
+
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 15px rgba(0, 0, 0, 0.6); /* Efeito de sombra para destacar o texto */
+}
+
+
+nav {
+    margin-top: 20ppx;
+    position: absolute;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Cor dos links */
+    margin-right: 15px;
+    margin-top: 20px;
+    font-weight: 100; /* Torna o texto muito fino */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6); /* Efeito de sombra para destacar o texto */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+footer p{
+
+    color: #ffffffba;
+  
+}
+
+.white {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 15px rgb(255, 255, 255);
+   font-weight: 30;
+}
+
+main {
+    margin-top: 120px; /* Espaço para o cabeçalho fixo */
+    padding: 20px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+form {
+    margin: auto;
+    padding: 10px;
+    width: 500px;
+    background-color: #00000051;
+    border: 1px solid #ffffff;
+}
+
+fieldset {
+    border: 1px solid #ffffffae;
+    padding: 10px;
+    margin: auto;
+}
+
+legend {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+label {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="date"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+}
+
+/* Serviço Desejado */
+.servico-opcoes {
+    margin-bottom: 15px;
+}
+
+.servico-opcoes input[type="radio"], .servico-opcoes label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+}
+
+input[type="submit"], input[type="reset"] {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #ff0000;
+}
+
+
+
+
+footer {
+    position: absolute;
+    bottom: 0; /* Fica fixo no fundo da página */
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #00000051;
+    margin-top: auto;
+    position: relative;
+}
+

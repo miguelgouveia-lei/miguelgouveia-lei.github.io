@@ -23,7 +23,7 @@ h2 {
 
 
 nav {
-    margin-top: ppx;
+    margin-top: 20ppx;
     position: absolute;
 }
 
@@ -40,10 +40,40 @@ nav a:hover {
     text-decoration: underline;
 }
 
+ul {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin-top: 40px; /* Espaçamento para separar do nav */
+}
+
+ul li {
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+ul a {
+    text-decoration: underline;
+    text-emphasis:inherit;
+    color: rgb(255, 255, 255);
+    font-weight:900;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.778), 0 0 15px rgba(0, 0, 0, 0.6);
+    text-indent: 20cap;
+}
+
+ul a:hover {
+    text-decoration:double;
+}
+
+
 footer p{
 
     color: #ffffffba;
-    
+  
+}
+
+.white {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 15px rgb(255, 255, 255);
+   font-weight: 30;
 }
 
 main {
