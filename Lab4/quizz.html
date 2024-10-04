@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Città di Roma</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <header>
+        <h1>QUIZZ</h1>
+        <h2>Um Quizz de ROMA</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a>
+        </nav>
+    </header>
+    <main>
+
+    <div class="form-container">
+        <form method="get" action="https://postman-echo.com/get">
+    
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+    
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br><br>
+    
+                <label for="apelido">Apelido:</label>
+                <input type="text" id="apelido" name="apelido" required><br><br>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <div class="inline-group">
+                    <label>Qual é a sua atração turística favorita?</label>
+                    <input type="radio" id="museum" name="attraction" value="Museu">
+                    <label for="museum">Museu</label>
+                    <input type="radio" id="park" name="attraction" value="Parque">
+                    <label for="park">Parque</label>
+                    <input type="radio" id="monument" name="attraction" value="Monumento">
+                    <label for="monument">Monumento</label>
+                </div>
+
+                <div class="inline-group">
+                    <label for="visitFrequency">Você visita a cidade regularmente?</label>
+                    <input type="checkbox" id="regularVisit" name="visitFrequency" value="Sim">
+                    <label for="regularVisit">Sim</label>
+                    <input type="checkbox" id="regularVisitNo" name="visitFrequency" value="Não">
+                    <label for="regularVisitNo">Não</label>
+                </div>
+
+                <div class="inline-group">
+                    <label for="birthDate">Data de nascimento:</label>
+                    <input type="date" id="birthDate" name="birthDate" required>
+                </div>
+
+                <label for="visitTime">Hora preferida para visitar:</label>
+                <input type="time" id="visitTime" name="visitTime">
+
+                <label for="favoriteColor">Cor favorita:</label>
+                <input type="color" id="favoriteColor" name="favoriteColor">
+
+                <label for="numberOfVisits">Número de visitas:</label>
+                <input type="number" id="numberOfVisits" name="numberOfVisits" min="0" step="1" placeholder="Digite o número de visitas">
+
+                <label for="citySize">Tamanho da cidade:</label>
+                <input type="range" id="citySize" name="citySize" min="1" max="100" step="1">
+
+                <label for="feedback">Comentários:</label>
+                <textarea id="feedback" name="feedback" placeholder="Digite seus comentários" maxlength="500"></textarea>
+
+                <label for="cityType">Tipo de cidade:</label>
+                <select id="cityType" name="cityType" required>
+                    <option value="">Selecione um tipo</option>
+                    <option value="Histórica">Histórica</option>
+                    <option value="Moderna">Moderna</option>
+                    <option value="Cultural">Cultural</option>
+                </select>
+
+                <label for="fileUpload">Envie uma imagem da cidade:</label>
+                <input type="file" id="fileUpload" name="fileUpload" accept="image/*">
+
+                <input type="reset" value="Limpar">
+                <input type="submit" value="Enviar">
+    
+            </fieldset>
+        </form>
+    </div>
+
+    </main>
+    <footer>
+        <p>2024</p>
+    </footer>
+</body>
+</html>
