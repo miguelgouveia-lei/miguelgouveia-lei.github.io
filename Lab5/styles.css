@@ -463,3 +463,62 @@ input[type="submit"], input[type="reset"] {
 input[type="submit"]:hover, input[type="reset"]:hover {
     background-color: #0263ff;
 }
+
+/* Página pontos de Interesse */
+
+.pontos {
+    display: flex; /* Exibe as boxes em linha */
+    justify-content: space-between; /* Espaçamento uniforme entre as boxes */
+    flex-wrap: nowrap; /* Mantém todas as boxes na mesma linha */
+    padding: 10px;
+    gap: 20px; /* Espaço entre as boxes */
+}
+
+.pontos {
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    top: -80px; 
+    left: 15px; 
+    font-size: 24px; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+
+.image-box1 {
+    position: relative;
+    width: 300px; 
+    height: 100px; 
+    overflow: hidden;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+}
+
+.image-box1 img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.image-box1 p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight:lighter;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
+
+
+}
+
+
