@@ -464,22 +464,27 @@ input[type="submit"]:hover, input[type="reset"]:hover {
     background-color: #0263ff;
 }
 
-/* Página pontos de Interesse */
+/* Página pontos de Interesse_________________________________________________*/
 
 .pontos {
+    top: 100px;
     display: flex; /* Exibe as boxes em linha */
     justify-content: space-between; /* Espaçamento uniforme entre as boxes */
     flex-wrap: nowrap; /* Mantém todas as boxes na mesma linha */
     padding: 10px;
-    gap: 20px; /* Espaço entre as boxes */
+    gap: 20px; 
+    margin-bottom: 30% ;
 }
 
 .pontos {
     position: relative;
+    background-color:#ffffff;
 }
 
 .overlay-text {
+    font-weight: lighter;
     position: absolute;
+    align-items: center;
     top: -80px; 
     left: 15px; 
     font-size: 24px; 
@@ -487,17 +492,17 @@ input[type="submit"]:hover, input[type="reset"]:hover {
     padding: 10px;
     border-radius: 5px;
     z-index: 10;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 
 .image-box1 {
     position: relative;
     width: 300px; 
-    height: 100px; 
+    height: 350px; 
     overflow: hidden;
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-
 }
 
 .image-box1 img {
@@ -516,9 +521,285 @@ input[type="submit"]:hover, input[type="reset"]:hover {
     font-size: 18px;
     font-weight:lighter;
     box-sizing: border-box;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.599), 0 0 15px rgba(0, 0, 0, 0.6);
+    
+}
 
+.image-box1 p:hover{
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.restaurantes {
+    background-color: #8f0000;
+    border:#936700 10px solid;
+    padding: 20px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    margin: 90px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.6);
+    font-weight:bold;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20% ;
 
 }
 
+.restaurantes h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+    position: relative;
+    top: -90px; 
+}
 
+
+.restaurantes ol {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size:150%
+}
+
+.restaurantes li:hover{
+
+    background-color:#003f0a;
+
+}
+
+.restaurantes li {
+    margin: 10px 0;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    list-style-type:upper-roman;
+    top: -40px; 
+}
+
+
+.restaurantes li:nth-child(even) {
+    color:#ffffff;
+    font-weight: lighter;
+}
+
+.restaurantes li:nth-child(odd) {
+    color:#828282;
+    font-weight: lighter;
+}
+
+.monumentos {
+    background-color: #ffffff;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 20% ;
+}
+
+.monumentos h2 {
+    color: #000000;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.monumentos ol {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    padding: 0; 
+    list-style-type: none; 
+    max-width: 100%; 
+}
+
+.monumentos ol li {
+    position: relative; 
+    flex: 1 1 300px; 
+    margin: 10px; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.monumentos ol li::before {
+    content: counter(list, upper-roman) "."; 
+    position: absolute; 
+    top: -20px; 
+    font-size: 20px; 
+    color: black; 
+    font-weight: lighter; 
+    list-style-type: upper-roman; 
+}
+
+.boxes-list {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    padding: 0; 
+    list-style-type: none; 
+    max-width: 100%; 
+    counter-reset: list;
+}
+
+.boxes-list li {
+    margin: 10px; 
+    flex: 1 1 300px; 
+    counter-increment: list;
+}
+
+.image-box2 {
+    position: relative; 
+    width: 100%; 
+    height: 200px; 
+    overflow: hidden; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.image-box2 img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.image-box2 p {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    color: white; 
+    text-align: center; 
+    padding: 10px; 
+    font-size: 18px; 
+    font-weight: lighter; 
+    box-sizing: border-box; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.599), 0 0 15px rgba(0, 0, 0, 0.6); 
+}
+
+.image-box2 p:hover{
+    color: #000000;
+    background-color: #ffffff;
+}
+
+
+.locais{
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 20% ;
+}
+
+.locais h2{
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+    position: relative;
+    top: -6px; 
+    font-size: 30px;
+}
+
+.boxes-list {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    padding: 0; 
+    list-style-type: none; 
+    max-width: 100%; 
+    counter-reset: list;
+}
+
+.boxes-list li {
+    margin: 10px; 
+    flex: 1 1 300px; 
+    counter-increment: list;
+}
+
+.image-box3 {
+    position: relative; 
+    width: 100%; 
+    height: 200px; 
+    overflow: hidden; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.image-box3 img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.image-box3 p {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    color: white; 
+    text-align: center; 
+    padding: 10px; 
+    font-size: 18px; 
+    font-weight: lighter; 
+    box-sizing: border-box; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.599), 0 0 15px rgba(0, 0, 0, 0.6); 
+}
+
+.image-box3 p:hover{
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.google-maps {
+    width: 100%;  
+    max-width: 90vw; 
+    height: 600px;
+    border: 0; 
+    margin-bottom: 20%
+}
+
+
+.melhor-altura-visitar table {
+    width: 70%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #faf3e0;
+    border: 1px solid #bdb76b;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.melhor-altura-visitar thead th {
+    background-color: #8b4513;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.melhor-altura-visitar tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #bdb76b;
+    text-align: left;
+    font-size: 14px;
+}
+
+.melhor-altura-visitar tbody tr:nth-child(odd) {
+    background-color: #f5e4c1;
+}
+
+.melhor-altura-visitar tbody tr:nth-child(even) {
+    background-color: #f9f1db;
+}
+
+.melhor-altura-visitar tbody tr:hover {
+    background-color: #e6d3a3;
+    transition: background-color 0.3s ease;
+}
+
+.melhor-altura-visitar tbody td:nth-child(1) {
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .melhor-altura-visitar table {
+        width: 100%;
+    }
+}
