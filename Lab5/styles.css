@@ -3,22 +3,25 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o body ocupe 100% da altura da viewport */
+    min-height: 100vh;
+    width: 100vw;
     background: url('images/coliseu.webp') no-repeat center center fixed;
     background-size: cover;
     backdrop-filter: blur(0px);
-    overflow-x: hidden; /* Impede o deslizamento lateral */
+    overflow-x: hidden;
 }
+
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adiciona a camada escura com 50% de opacidade */
-    z-index: 1; /* Garante que a camada fique atrás do conteúdo */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+
 }
 
 * {
@@ -85,6 +88,7 @@ nav a:hover {
 main {
     flex: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
     margin-top: 120px; /* Espaço para o cabeçalho fixo */
+
 }
 
 footer {
@@ -276,6 +280,17 @@ th {
 
 /* Página QUIZZ*/
 
+.inline-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha as opções à esquerda */
+    margin-bottom: 10px;
+}
+
+.inline-group label {
+    margin-right: 20px; /* Espaçamento entre opções */
+    color: #ffffff;
+}
 
 .form-container {
     display: flex;
@@ -283,95 +298,73 @@ th {
     align-items: center;
     flex-grow: 1;
     padding: 20px;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 form {
-    margin: auto;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    width: 550px;
-    background-color: #00000051;
-    border: 1px solid #ffffff;
-    
-}
-
-fieldset {
-    border: 1px solid #ffffffae;
-    padding: 10px; /* Aumentei o padding para melhorar a separação dos itens */
-    margin: auto;
-}
-
-legend {
-    color: #ffffff;
-    margin-bottom: 10px; /* Espaço abaixo do legend */
-}
-
-label {
-    color: #ffffff;
-    display:flexbox;
-    margin-bottom: 5px; /* Espaço abaixo das labels de texto */
-}
-
-input[type="text"], input[type="email"], input[type="date"], input[type="time"], input[type="number"], input[type="range"], input[type="color"] {
     width: 100%;
+    max-width: 550px; /* Ajuste aqui para definir a largura máxima do formulário */
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    overflow: hidden; /* Impede que o conteúdo estoure para fora do formulário */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="range"],
+input[type="color"],
+textarea,
+select {
+    width: 100%; 
     padding: 10px;
-    margin-bottom: 15px; /* Espaço abaixo dos campos de input */
+    margin-bottom: 15px;
     background-color: #ffffff;
     color: #000000;
     border: 1px solid #ffffff;
+    box-sizing: border-box; 
 }
 
-input[type="radio"], input[type="checkbox"] {
-    margin-right: 10px;
-    margin-bottom: 0; /* Remover o espaçamento inferior das opções */
-    display: inline-block; /* Exibir opções na horizontal */
+textarea {
+    height: 100px; /* Define uma altura fixa para a textarea */
 }
 
-label[for="museum"], label[for="park"], label[for="monument"], 
-label[for="regularVisit"], label[for="emailUpdates"] {
-    display: inline-block;
-    margin-right: 20px; /* Espaçamento entre opções */
-}
-
-input[type="submit"], input[type="reset"] {
+input[type="submit"],
+input[type="reset"] {
     background-color: #ffffff;
     color: #000000;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    margin-top: 10px; /* Espaço acima dos botões */
+    margin-top: 10px;
 }
 
-input[type="submit"]:hover, input[type="reset"]:hover {
-    background-color: #0263ff;
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #2e394c;
 }
 
-textarea {
-    width: 100%;
+fieldset {
+    border: 1px solid #ffffffae;
     padding: 10px;
-    margin-bottom: 15px; /* Espaço abaixo da textarea */
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #ffffff;
+    margin: auto;
 }
 
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px; /* Espaço abaixo do select */
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #ffffff;
-}
-
-.inline-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+legend {
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
-.inline-group label {
-    margin-right: 10px;
+label {
+    color: #ffffff;
+    margin-bottom: 5px;
 }
 
 
