@@ -40,8 +40,17 @@
         font-size: xx-small;
     }
 
-    .dropdown {
-        display: inline-block; 
+
+    iframe {
+        display: block;
+        margin: 20px auto;
+        width: 90vw;
+        height: 400px;
+        border: 2px solid #ffffff45;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        opacity: 0.9;
+        z-index: -1;
     }
 }
 
@@ -55,6 +64,15 @@
 
     nav {
         font-size: larger;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 20%;
     }
 
     .boxes-list {
@@ -84,6 +102,15 @@
 
     nav {
         font-size: x-large;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 20%;
     }
 
     .boxes-list {

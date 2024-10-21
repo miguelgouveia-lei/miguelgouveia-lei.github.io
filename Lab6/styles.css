@@ -174,7 +174,7 @@ footer ul a:hover {
 iframe {
     display: block;
     margin: 20px auto;
-    width: 90vw;
+    width: 35vw;
     height: 400px;
     border: 2px solid #ffffff45;
     border-radius: 10px;
@@ -394,7 +394,7 @@ form {
     margin: auto;
     padding: 10px;
     width: 550px;
-    background-color: #00000051;
+    background-color: #000c47;
     border: 1px solid #ffffff;
 }
 
@@ -405,7 +405,7 @@ fieldset {
 }
 
 legend {
-    color: #ffffff;
+    color: #00fffb;
     margin-bottom: 10px; 
 }
 
@@ -449,11 +449,12 @@ select {
 textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px; 
     background-color: #ffffff;
     color: #000000;
     border: 1px solid #ffffff;
+    box-sizing: border-box; 
 }
+
 
 input[type="submit"], input[type="reset"] {
     background-color: #ffffff;
@@ -465,7 +466,7 @@ input[type="submit"], input[type="reset"] {
 }
 
 input[type="submit"]:hover, input[type="reset"]:hover {
-    background-color: #0263ff;
+    background-color: #002766;
 }
 
 /* Página pontos de Interesse_________________________________________________*/
