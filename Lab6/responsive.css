@@ -1,122 +1,54 @@
-/* Estilos base */
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100vw;
-    background: url('images/coliseu.webp') no-repeat center center fixed;
-    background-size: cover;
-    backdrop-filter: blur(0px);
-    overflow-x: hidden;
-}
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: -1; 
-}
-
-* {
-    position: relative;
-    z-index: 2; 
-}
-
-h1 {
-    margin-top: 13;
-    margin-bottom: 0;
-    font-size: 5em;
-    color: #f1f1f1;
-    text-align: center;
-}
-
-main {
-    flex: 1;
-    margin-top: 120px;
-}
-
-/* Media Queries */
-
-/* Mobile Portrait */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 3em;
-    }
-
+@media (max-width: 900px) {
     nav {
-        font-size: smaller;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 20%;
     }
 
-    .pontos {
-        flex-direction: column; /* Empilha as boxes verticalmente */
-        align-items: center; /* Centraliza as boxes */
+    header{
+        padding-top: 10% ;
+        font-size: xx-small;
+
+
+
     }
 
-    .image-box1, .image-box2 {
-        width: 100%; /* A largura máxima é 100% */
-    }
-
-    footer {
-        padding: 10px;
-    }
-}
-
-/* Mobile Landscape */
-@media (min-width: 481px) and (max-width: 767px) {
     h1 {
-        font-size: 4em;
+        
+        margin-top: 30%;
+        
     }
 
-    nav {
-        font-size: medium;
+    h3 {
+        margin-top: auto;
+        
     }
 
-    .pontos {
-        flex-direction: row; /* Mantém as boxes em linha */
-        flex-wrap: wrap; /* Permite que as boxes se movam para a linha seguinte */
+    h4 {
+        font-size: xx-small;  
     }
 
-    .image-box1, .image-box2 {
-        width: 48%; /* Quase 50% da largura */
+    .restaurantes{
+        margin-top: 70%;
+        width: 220px;
+        height: 220px;
+        font-size: xx-small;
     }
 
-    footer {
-        padding: 15px;
+    .dropdown {
+        display: inline-block; 
     }
 }
 
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-    h1 {
-        font-size: 4.5em;
-    }
 
-    nav {
-        font-size: large;
-    }
-
-    .pontos {
-        justify-content: space-around; /* Espaçamento uniforme */
-    }
-
-    .image-box1, .image-box2 {
-        width: 30%; /* 30% da largura para 3 boxes na linha */
-    }
-
-    footer {
-        padding: 20px;
-    }
-}
 
 /* Laptop */
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 901px) and (max-width: 1440px) {
     h1 {
         font-size: 5em;
     }
@@ -125,16 +57,22 @@ main {
         font-size: larger;
     }
 
-    .pontos {
-        justify-content: space-between; /* Espaçamento entre as boxes */
+    .boxes-list {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
     }
 
-    .image-box1, .image-box2 {
-        width: 22%; /* 22% da largura para 4 boxes na linha */
+    .image-box1 {
+        width: calc(25% - 2%); 
+        margin: 1%;
     }
 
     footer {
         padding: 25px;
+        grid-area: footer;
+        text-align: center;
     }
 }
 
@@ -148,15 +86,21 @@ main {
         font-size: x-large;
     }
 
-    .pontos {
+    .boxes-list {
+        padding: 0;
+        margin: 0;
+        display: flex;
         justify-content: space-around;
     }
 
-    .image-box1, .image-box2 {
-        width: 20%; /* 20% da largura para 5 boxes na linha */
+    .image-box1 {
+        width: calc(20% - 2%); 
+        margin: 1%;
     }
 
     footer {
         padding: 30px;
+        grid-area: footer;
+        text-align: center;
     }
 }
