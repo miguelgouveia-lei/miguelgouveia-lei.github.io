@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Exemplo Interativo</title>
+
+</head>
+
+<header>
+    <h1>LAB 7</h1>
+</header>
+<body>
+    <body>
+        <div class="container">
+            <p id="hoverText" onmouseover="highlightText()" onmouseout="resetText()">1. Passa por aqui!</p>
+
+          <p id="colorText" class="highlight">2. Pinta-me!</p>
+        <button onclick="changeTextColor('red')">Red</button>
+        <button onclick="changeTextColor('green')">Green</button>
+        <button onclick="changeTextColor('blue')">Blue</button>
+            
+        <p id="typingText">3. Experimenta escrever...</p>
+        <input type="text" id="textInput" oninput="changeInputColor()" placeholder="Escreva algo aqui...">
+            
+        <p>4. Escolha uma cor em inglês:</p>
+        <input type="text" id="colorInput" placeholder="Digite uma cor">
+        <button onclick="submitColor()">submeter</button>
+            
+        <p>5. <button onclick="incrementCounter()">Conta!</button> <span id="countResult">0</span></p>
+        </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

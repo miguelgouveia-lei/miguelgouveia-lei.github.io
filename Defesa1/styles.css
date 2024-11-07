@@ -64,7 +64,7 @@ body {
     position: relative;
     text-decoration: none; 
     list-style-type: none;
-    width: 120px;
+    width: 130px;
     height:80px;
     padding: 30%; 
     overflow: hidden; 
@@ -91,7 +91,7 @@ body {
     bottom: 0;  
     text-decoration: none;
     text-align: center; 
-    padding: 10%; 
+    padding: 15%; 
     font-size: 18px; 
     font-weight: lighter; 
     box-sizing: border-box;   

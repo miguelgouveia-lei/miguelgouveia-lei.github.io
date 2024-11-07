@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header{
+    margin-right: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+#hoverText {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#hoverText:hover {
+    transform: scale(1.1);
+    color: #ff6347;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #ff6347;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    margin: 10px 0;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#countResult {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+#typingText {
+    font-size: 1.3em;
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+input[type="text"]:focus::placeholder {
+    color: #4a90e2;
+}
+
+input[type="text"]:not(:focus)::placeholder {
+    color: #aaa;
+}
