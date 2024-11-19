@@ -69,6 +69,7 @@ function criaProdutoCesto(produto) {
   artigo.classList.add('produto-carrinho');
 
   artigo.innerHTML = `
+       <img src="${produto.image}" alt="${produto.title}">
       <h3>${produto.title}</h3>
       <p>Preço: €${produto.price.toFixed(2)}</p>
   `;

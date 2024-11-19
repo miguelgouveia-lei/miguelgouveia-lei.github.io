@@ -146,6 +146,14 @@ nav ul li a:hover {
     padding: 10px 0;
 }
 
+.produto-carrinho img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
 .produto-carrinho:last-child {
     border-bottom: none;
 }
