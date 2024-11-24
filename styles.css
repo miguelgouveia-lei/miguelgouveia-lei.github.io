@@ -1,0 +1,107 @@
+
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1a1a1a; /* Dark background for luxury feel */
+    color: #f4f4f4;
+    letter-spacing: 1px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background: #d40000; /* Ferrari red */
+    color: #ffffff;
+    padding: 20px 0;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 300;
+    color: #ffcccc;
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: #121212;
+}
+
+main ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+main ul li {
+    background: #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+main ul li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); 
+}
+
+main ul li a {
+    display: block;
+    padding: 30px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.4s;
+}
+
+main ul li a:hover {
+    color: #d40000;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #d40000;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+}
+
+footer p {
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffcccc;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
