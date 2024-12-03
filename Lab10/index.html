@@ -8,9 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Produtos</h1>
-
-
+        <h1>MEISTER MARKETPLACE</h1>
         <nav>
             <ul>
                 <li><a href="#produtos">Produtos</a></li>
@@ -19,17 +17,50 @@
         </nav>
     </header>
 
-    <select id="category-filter">
-        <option value="all">Todas as categorias</option>
-    </select>
-    <div id="product-list"></div>
+    <div class="filters-container">
+        <div class="filters">
+            <select id="category-filter">
+                <option value="all">Todas as categorias</option>
+            </select>
+            <select id="price-filter">
+                <option value="asc">Preço: Menor para Maior</option>
+                <option value="desc">Preço: Maior para Menor</option>
+            </select>
+            <input type="text" id="search-bar" placeholder="Pesquisar por nome...">
+        </div>
+    </div>
 
-    
-    <section id="produtos-container"></section>
+    <section id="produtos-container">
+        <!-- Os produtos serão inseridos aqui dinamicamente -->
+    </section>
 
     <h2 id="carrinho">Cesto</h2>
+    <section id="produtos-carrinho">
+        <!-- Produtos no cesto serão listados aqui -->
+    </section>
+
+    <div id="cart">
+        <div id="products">
+            <!-- Os produtos serão inseridos aqui dinamicamente -->
+        </div>
+        <div id="preco-total">Preço Total: €0.00</div>
+        <div id="student-discount">
+            <label for="student">És estudante do DEISI?</label>
+            <input type="checkbox" id="student">
+        </div>
+        <div id="coupon">
+            <label for="coupon">Cupão de desconto:</label>
+            <input type="text" id="coupon-code">
+        </div>
+        <div id="valor-a-pagar" style="display: none;">Valor a pagar (com eventuais descontos): €0.00</div>
+        <div id="referencia-pagamento" style="display: none;">Referência de Pagamento: 201124-0004</div>
+
+        <button id="finalizar-compra">Finalizar Compra</button>
+        <button id="limpar-carrinho">Limpar Carrinho</button>
+
+    </div>
+
    
-    <section id="produtos-carrinho"></section>
 
     <script src="main.js"></script>
 </body>
