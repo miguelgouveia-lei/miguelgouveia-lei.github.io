@@ -1,17 +1,16 @@
 const apiBase = "https://deisishop.pythonanywhere.com/";
 const productsUrl = `${apiBase}products/`;
 const categoriesUrl = `${apiBase}categories/`;
+const buyUrl = `${apiBase}buy/`;
 
-// Inicializar o localStorage com a chave "produtos-selecionados"
 if (!localStorage.getItem('produtos-selecionados')) {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
 }
 
 if (!localStorage.getItem('referencia-pagamento')) {
-    localStorage.setItem('referencia-pagamento', '201124-0004'); // Inicializa com o valor inicial
+    localStorage.setItem('referencia-pagamento', '201124-0004');
 }
 
-// Função para buscar categorias e popular o filtro
 async function fetchCategories() {
     try {
         const response = await fetch(categoriesUrl);
@@ -23,26 +22,22 @@ async function fetchCategories() {
     }
 }
 
-// Função para buscar produtos e renderizar na página
 async function fetchProducts(category = "all", order = "asc", search = "") {
     try {
         const response = await fetch(productsUrl);
         if (!response.ok) throw new Error(`Erro: ${response.statusText}`);
         let products = await response.json();
 
-        // Filtrar por categoria
         if (category !== "all") {
             products = products.filter(product => product.category === category);
         }
 
-        // Filtrar por pesquisa (case-insensitive)
         if (search) {
             products = products.filter(product =>
                 product.title.toLowerCase().includes(search.toLowerCase())
             );
         }
 
-        // Ordenar por preço
         products.sort((a, b) => (order === "asc" ? a.price - b.price : b.price - a.price));
 
         renderProducts(products);
@@ -51,7 +46,6 @@ async function fetchProducts(category = "all", order = "asc", search = "") {
     }
 }
 
-// Função para renderizar as categorias
 function renderCategoryFilter(categories) {
     const categoryFilter = document.getElementById("category-filter");
     categories.forEach(category => {
@@ -64,7 +58,6 @@ function renderCategoryFilter(categories) {
     categoryFilter.addEventListener("change", applyFilters);
 }
 
-// Função para aplicar os filtros
 function applyFilters() {
     const selectedCategory = document.getElementById("category-filter").value;
     const selectedOrder = document.getElementById("price-filter").value;
@@ -72,7 +65,6 @@ function applyFilters() {
     fetchProducts(selectedCategory, selectedOrder, searchText);
 }
 
-// Função para renderizar os produtos
 function renderProducts(products) {
     const productContainer = document.getElementById("produtos-container");
     productContainer.innerHTML = "";
@@ -88,10 +80,12 @@ function renderProducts(products) {
         productElement.innerHTML = 
             `<h3 class="produto-title">${product.title}</h3>
             <img src="${product.image}" alt="${product.title}">
+             <p class="produto-description">€${product.description}</p>
             <p class="produto-price">€${product.price.toFixed(2)}</p>`;
 
         const botaoAdicionar = document.createElement('button');
         botaoAdicionar.textContent = '+ Adicionar ao cesto';
+
         botaoAdicionar.addEventListener('click', () => {
             adicionarProdutoAoCesto(product);
         });
@@ -101,10 +95,8 @@ function renderProducts(products) {
     });
 }
 
-// Função para adicionar um produto ao carrinho no localStorage
 function adicionarProdutoAoCesto(produto) {
     const produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
-
     const produtoExistente = produtosSelecionados.find(item => item.id === produto.id);
 
     if (produtoExistente) {
@@ -115,19 +107,16 @@ function adicionarProdutoAoCesto(produto) {
     }
 
     localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados));
-    atualizaCesto(); 
+    atualizaCesto();
     atualizaPrecoTotal(); 
 }
 
-// Função para remover um produto do carrinho
 function removerProdutoDoCesto(produtoId) {
     let produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
-
     const produtoExistente = produtosSelecionados.find(item => item.id === produtoId);
 
     if (produtoExistente) {
         produtoExistente.quantidade -= 1;
-
         if (produtoExistente.quantidade <= 0) {
             produtosSelecionados = produtosSelecionados.filter(item => item.id !== produtoId);
         }
@@ -138,7 +127,6 @@ function removerProdutoDoCesto(produtoId) {
     atualizaPrecoTotal(); 
 }
 
-// Função para atualizar o cesto no DOM
 function atualizaCesto() {
     const produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
     const cestoContainer = document.getElementById('produtos-carrinho');
@@ -162,43 +150,75 @@ function atualizaCesto() {
         artigo.appendChild(botaoRemover);
         cestoContainer.appendChild(artigo);
     });
-
-    atualizaPrecoTotal(); 
 }
 
-// Função para calcular e atualizar o preço total
-function atualizaPrecoTotal() {
+async function calcularCompraAPI(produtos, isStudent, couponCode) {
+    try {
+        const response = await fetch(buyUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                products: produtos,
+                student: isStudent,
+                coupon: couponCode,
+            }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || `Erro desconhecido: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Erro ao calcular compra: ${error.message}`);
+        return { totalCost: null, reference: null, error: error.message };
+    }
+}
+
+async function atualizaPrecoTotal() {
     const produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados')) || [];
     const precoTotalElement = document.getElementById('preco-total');
     const valorAPagarElement = document.getElementById('valor-a-pagar');
 
-    // Calcula o preço bruto (sem descontos)
-    let precoBruto = produtosSelecionados.reduce((total, produto) => total + produto.price * produto.quantidade, 0);
+    if (produtosSelecionados.length === 0) {
+        precoTotalElement.textContent = `Preço Total: €0.00`;
+        valorAPagarElement.style.display = 'none';
+        return;
+    }
 
-    // Aplica descontos
-    let precoFinal = precoBruto;
+    const productIds = produtosSelecionados.map(produto => produto.id);
     const isStudent = document.getElementById('student') ? document.getElementById('student').checked : false;
-    if (isStudent) {
-        precoFinal *= 0.9; // 10% de desconto para estudantes
-    }
-
     const couponCode = document.getElementById('coupon-code') ? document.getElementById('coupon-code').value : '';
-    if (couponCode === 'DESCONTO10') {
-        precoFinal *= 0.9; // 10% de desconto com cupão
+
+    const apiResponse = await calcularCompraAPI(productIds, isStudent, couponCode);
+
+    if (apiResponse.error) {
+        precoTotalElement.textContent = `Erro: ${apiResponse.error}`;
+        valorAPagarElement.style.display = 'none';
+        return;
     }
 
-    // Atualiza os elementos no DOM
-    precoTotalElement.textContent = `Preço Total (sem descontos): €${precoBruto.toFixed(2)}`;
-    valorAPagarElement.textContent = `Valor a pagar (com descontos): €${precoFinal.toFixed(2)}`;
-    valorAPagarElement.style.display = 'block';
+    precoTotalElement.textContent = `Preço Total (sem descontos): €${produtosSelecionados.reduce(
+        (total, produto) => total + produto.price * produto.quantidade,
+        0
+    ).toFixed(2)}`;
+
+    if (isStudent || couponCode) {
+        valorAPagarElement.textContent = `Valor a pagar (com descontos): €${apiResponse.totalCost}`;
+        valorAPagarElement.style.display = 'block';
+    } else {
+        valorAPagarElement.style.display = 'none';
+    }
 }
 
-// Função para finalizar compra
-document.getElementById('finalizar-compra').addEventListener('click', () => {
+function finalizarCompra() {
     let referenciaPagamento = localStorage.getItem('referencia-pagamento');
-    if (!referenciaPagamento) {
-        referenciaPagamento = '201124-0004';
-    }
+    const referenciaPagamentoElement = document.getElementById('referencia-pagamento');
+
+    if (!referenciaPagamento) referenciaPagamento = '201124-0004';
 
     const referenciaParts = referenciaPagamento.split('-');
     let numeroReferencia = parseInt(referenciaParts[1], 10);
@@ -207,36 +227,29 @@ document.getElementById('finalizar-compra').addEventListener('click', () => {
     referenciaPagamento = `${referenciaParts[0]}-${String(numeroReferencia).padStart(4, '0')}`;
     localStorage.setItem('referencia-pagamento', referenciaPagamento);
 
-    const referenciaPagamentoElement = document.getElementById('referencia-pagamento');
     referenciaPagamentoElement.textContent = `Referência de pagamento: ${referenciaPagamento}`;
     referenciaPagamentoElement.style.display = 'block';
-});
+}
 
-// Função para limpar carrinho
-document.getElementById('limpar-carrinho').addEventListener('click', () => {
+function limparCarrinho() {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
-    atualizaCesto();
-
     document.getElementById('coupon-code').value = '';
     document.getElementById('student').checked = false;
-
-    const referenciaPagamentoElement = document.getElementById('referencia-pagamento');
-    referenciaPagamentoElement.style.display = 'none';
-    referenciaPagamentoElement.textContent = '';
-
+    document.getElementById('referencia-pagamento').style.display = 'none';
+    atualizaCesto();
     atualizaPrecoTotal();
-});
+}
 
-// Inicialização
+document.getElementById('finalizar-compra').addEventListener('click', finalizarCompra);
+document.getElementById('limpar-carrinho').addEventListener('click', limparCarrinho);
+
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('referencia-pagamento').style.display = 'none'; 
-    document.getElementById('valor-a-pagar').style.display = 'none'; 
-
+    document.getElementById('referencia-pagamento').style.display = 'none';
+    document.getElementById('valor-a-pagar').style.display = 'none';
     fetchCategories();
     fetchProducts();
 });
 
-// Eventos de filtro
 document.getElementById("search-bar").addEventListener("input", applyFilters);
 document.getElementById("price-filter").addEventListener("change", applyFilters);
 document.getElementById('student').addEventListener('change', atualizaPrecoTotal);

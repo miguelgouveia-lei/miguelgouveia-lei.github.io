@@ -118,6 +118,7 @@ h2 {
     padding: 15px;
     flex: 1 1 calc(25% - 20px);
     max-width: 300px;
+    justify-content:space-between;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -143,6 +144,17 @@ h2 {
     color: #E91E63;
     font-size: 1.1em;
     margin: 5px 0;
+    margin-top: 20px;
+}
+
+.produto-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    background-color:rgba(137, 43, 226, 0.035);
+    border-radius: 10%;
+    padding: 10px;
+    
 }
 
 .produto-description {
